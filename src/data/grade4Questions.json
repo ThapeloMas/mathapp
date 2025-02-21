@@ -1,0 +1,92 @@
+[
+  {
+    "question": "What is 56 + 78?",
+    "answers": [
+      { "text": "132", "isCorrect": false },
+      { "text": "134", "isCorrect": true },
+      { "text": "136", "isCorrect": false },
+      { "text": "138", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "How many minutes are in 3 hours?",
+    "answers": [
+      { "text": "160", "isCorrect": false },
+      { "text": "180", "isCorrect": true },
+      { "text": "200", "isCorrect": false },
+      { "text": "220", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What is 92 - 47?",
+    "answers": [
+      { "text": "43", "isCorrect": false },
+      { "text": "45", "isCorrect": true },
+      { "text": "47", "isCorrect": false },
+      { "text": "49", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What is 7 × 8?",
+    "answers": [
+      { "text": "54", "isCorrect": false },
+      { "text": "56", "isCorrect": true },
+      { "text": "58", "isCorrect": false },
+      { "text": "60", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "How many sides does a hexagon have?",
+    "answers": [
+      { "text": "5", "isCorrect": false },
+      { "text": "6", "isCorrect": true },
+      { "text": "7", "isCorrect": false },
+      { "text": "8", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What is 125 - 89?",
+    "answers": [
+      { "text": "34", "isCorrect": false },
+      { "text": "36", "isCorrect": true },
+      { "text": "38", "isCorrect": false },
+      { "text": "40", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What is 72 ÷ 9?",
+    "answers": [
+      { "text": "7", "isCorrect": false },
+      { "text": "8", "isCorrect": true },
+      { "text": "9", "isCorrect": false },
+      { "text": "10", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "How many centimeters are in 2 meters? (1 meter = 100 cm)",
+    "answers": [
+      { "text": "150", "isCorrect": false },
+      { "text": "200", "isCorrect": true },
+      { "text": "250", "isCorrect": false },
+      { "text": "300", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What is 5 × 12?",
+    "answers": [
+      { "text": "55", "isCorrect": false },
+      { "text": "60", "isCorrect": true },
+      { "text": "65", "isCorrect": false },
+      { "text": "70", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Which number is a multiple of 4?",
+    "answers": [
+      { "text": "15", "isCorrect": false },
+      { "text": "18", "isCorrect": false },
+      { "text": "20", "isCorrect": true },
+      { "text": "22", "isCorrect": false }
+    ]
+  }
+]

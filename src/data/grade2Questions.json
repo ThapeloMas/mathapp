@@ -1,0 +1,92 @@
+[
+  {
+    "question": "What is 15 + 7?",
+    "answers": [
+      { "text": "20", "isCorrect": false },
+      { "text": "21", "isCorrect": false },
+      { "text": "22", "isCorrect": true },
+      { "text": "23", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "How many legs do 3 spiders have? (Each spider has 8 legs)",
+    "answers": [
+      { "text": "20", "isCorrect": false },
+      { "text": "24", "isCorrect": true },
+      { "text": "28", "isCorrect": false },
+      { "text": "32", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What is 10 - 6?",
+    "answers": [
+      { "text": "3", "isCorrect": false },
+      { "text": "4", "isCorrect": true },
+      { "text": "5", "isCorrect": false },
+      { "text": "6", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "How many minutes are in half an hour?",
+    "answers": [
+      { "text": "20", "isCorrect": false },
+      { "text": "25", "isCorrect": false },
+      { "text": "30", "isCorrect": true },
+      { "text": "35", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What is 5 + 8?",
+    "answers": [
+      { "text": "11", "isCorrect": false },
+      { "text": "12", "isCorrect": false },
+      { "text": "13", "isCorrect": true },
+      { "text": "14", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "How many sides does a square have?",
+    "answers": [
+      { "text": "3", "isCorrect": false },
+      { "text": "4", "isCorrect": true },
+      { "text": "5", "isCorrect": false },
+      { "text": "6", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What is 20 - 9?",
+    "answers": [
+      { "text": "9", "isCorrect": false },
+      { "text": "10", "isCorrect": false },
+      { "text": "11", "isCorrect": true },
+      { "text": "12", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "How many nickels make a quarter? (1 nickel = 5 cents)",
+    "answers": [
+      { "text": "3", "isCorrect": false },
+      { "text": "4", "isCorrect": false },
+      { "text": "5", "isCorrect": true },
+      { "text": "6", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What is 3 + 9?",
+    "answers": [
+      { "text": "10", "isCorrect": false },
+      { "text": "11", "isCorrect": false },
+      { "text": "12", "isCorrect": true },
+      { "text": "13", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Which number is even?",
+    "answers": [
+      { "text": "7", "isCorrect": false },
+      { "text": "9", "isCorrect": false },
+      { "text": "10", "isCorrect": true },
+      { "text": "11", "isCorrect": false }
+    ]
+  }
+]
