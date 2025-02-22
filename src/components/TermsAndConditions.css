@@ -1,0 +1,138 @@
+/* components/TermsAndConditions.css */
+.terms-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+ 
+}
+
+.terms-container {
+  padding: 4%;
+  border-radius: 0.5rem;
+  border: 4px solid #fff;
+  background: rgba(0, 255, 240, 0.52);
+  box-shadow: 0px 0px 64px 0px #82e1ff inset, 0px 0px 16px #a8fffaa6;
+  backdrop-filter: blur(3.5px);
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.terms-notice {
+  color: #ff3333; /* Matches .error from LandingPage.css */
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1em;
+  text-shadow: 0px 1px 5px rgb(66, 66, 66);
+}
+
+.terms-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 1em;
+}
+
+.terms-content h2 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 8px;
+  text-shadow: 0px 0px 16px rgb(243, 243, 243);
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.terms-content h3 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-shadow: 0px 0px 8px rgb(243, 243, 243);
+  margin-top: 1em;
+}
+
+.terms-content p {
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-shadow: 0px 1px 5px rgb(66, 66, 66);
+  margin-bottom: 1em;
+}
+
+.terms-footer {
+  padding-top: 1em;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.terms-checkbox input {
+  width: 1.5em;
+  height: 1.5em;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.terms-checkbox label {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0px 1px 4px rgb(243, 243, 243);
+}
+
+.accept-terms-btn {
+  cursor: pointer;
+  height: 3.5rem;
+  width: 100%;
+  color: white;
+  font-size: 1.5em;
+  letter-spacing: 0.3rem;
+  border: 2px solid white;
+  background: linear-gradient(144deg, #9c11ffce, #2000eeb6 50%, #15efffbb);
+  border-radius: 6px;
+}
+
+.accept-terms-btn:hover {
+  position: relative;
+  bottom: 4px;
+  background: linear-gradient(144deg, #9c11ff, #2000ee 50%, #15fff3);
+  box-shadow: 0px 0px 2px 2px #ffffff;
+}
+
+.accept-terms-btn:disabled {
+  background: rgba(139, 255, 247, 0.2);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+/* Add to TermsAndConditions.css */
+.back-button {
+  cursor: pointer;
+  height: 3.5rem;
+  width: 100%;
+  color: white;
+  font-size: 1.5em;
+  letter-spacing: 0.3rem;
+  border: 2px solid white;
+  background: linear-gradient(144deg, #ff9c11ce, #ee2000b6 50%, #ff15e8bb);
+  border-radius: 6px;
+  margin-top: 1em;
+}
+
+.back-button:hover {
+  position: relative;
+  bottom: 4px;
+  background: linear-gradient(144deg, #ff9c11, #ee2000 50%, #ff15e8);
+  box-shadow: 0px 0px 2px 2px #ffffff;
+}

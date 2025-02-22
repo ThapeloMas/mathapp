@@ -81,9 +81,9 @@ body {
   object-fit: cover; /* Make the video cover the entire background */
 }
 
-.content {
+.content:not(.landing-page-content) {
   position: relative;
-  z-index: 1; /* Ensure content appears above the video */
+  z-index: 1;
   background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
   padding: 20px;
   border-radius: 10px;
@@ -168,3 +168,18 @@ body {
   background-color: #e65a50; /* Slightly darker shade on hover */
 }
 
+.send-results-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background: linear-gradient(144deg, #ff9c11ce, #ee2000b6 50%, #ff15e8bb);
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.send-results-button:hover {
+  background: linear-gradient(144deg, #ff9c11, #ee2000 50%, #ff15e8);
+  box-shadow: 0px 0px 2px 2px #ffffff;
+}

@@ -1,0 +1,189 @@
+.StyledWrapper #Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100vh;
+}
+
+#rays {
+  z-index: 2;
+  position: relative;
+  bottom: -1.5em;
+  animation: rays 2s ease-in-out infinite;
+}
+
+.form {
+  position: relative;
+  top: 5em;
+  padding: 4%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  border: 4px solid #fff;
+  background: rgba(0, 255, 240, 0.52);
+  box-shadow: 0px 0px 64px 0px #82e1ff inset, 0px 0px 16px #a8fffaa6;
+  backdrop-filter: blur(3.5px);
+  gap: 1em;
+  animation: float 2s ease-in-out infinite;
+}
+
+#login-label {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 8px;
+  text-shadow: 0px 0px 16px rgb(243, 243, 243);
+}
+
+.form-content {
+  height: 3em;
+  padding: 1px 8px;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: bold;
+  border-radius: 6px;
+  border: 2px solid #fff;
+  background: rgba(139, 255, 247, 0.486);
+  box-shadow: 0px 0px 1px 3px #9ee5e3 inset, 0px 4px 4px 0px #181a6040;
+  text-shadow: 0px 1px 4px rgb(243, 243, 243);
+}
+
+.form-content:focus-visible {
+  outline: none;
+  text-decoration: none;
+  background: rgba(139, 189, 255, 0.59);
+  box-shadow: 0px 0px 1px 4px #9ee5e3;
+}
+
+.form-content:hover {
+  background: rgba(139, 189, 255, 0.59);
+}
+
+.form-content::placeholder {
+  font-weight: 300;
+  color: white;
+  letter-spacing: 0.1rem;
+  text-shadow: 0px 1px 5px rgb(66, 66, 66);
+}
+
+.form button {
+  cursor: pointer;
+  height: 3.5rem;
+  padding: 0%;
+  color: white;
+  font-size: 1.5em;
+  letter-spacing: 0.3rem;
+  border: 2px solid white;
+  background: linear-gradient(144deg, #9c11ffce, #2000eeb6 50%, #15efffbb);
+}
+
+.form button:hover {
+  position: relative;
+  bottom: 4px;
+  background: linear-gradient(144deg, #9c11ff, #2000ee 50%, #15fff3);
+  box-shadow: 0px 0px 2px 2px #ffffff;
+}
+
+.guest-button {
+  background: linear-gradient(144deg, #ff9c11ce, #ee2000b6 50%, #ff15e8bb);
+}
+
+.guest-button:hover {
+  background: linear-gradient(144deg, #ff9c11, #ee2000 50%, #ff15e8);
+}
+
+.error {
+  color: #ff3333;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.toggle-auth {
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+.toggle-auth:hover {
+  color: #9ee5e3;
+}
+
+@keyframes float {
+  0% {
+    position: relative;
+  }
+  50% {
+    top: 50px;
+  }
+  100% {
+    position: relative;
+  }
+}
+
+@keyframes rays {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Add to LandingPage.css */
+
+/* Terms Section */
+.terms-section {
+  margin: 1em 0; /* Matches form gap */
+}
+
+.terms-link {
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1rem;
+  text-decoration: underline;
+  text-shadow: 0px 1px 4px rgb(243, 243, 243);
+}
+
+.terms-link:hover {
+  color: #9ee5e3; /* Matches .toggle-auth hover */
+}
+
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 1em; /* Matches form gap */
+  margin-top: 0.5em;
+}
+
+.terms-checkbox input {
+  width: 1.5em;
+  height: 1.5em;
+  border: 2px solid #fff; /* Matches form-content border */
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.terms-checkbox label {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px; /* Matches form-content */
+  text-shadow: 0px 1px 4px rgb(243, 243, 243); /* Matches form-content */
+}
+
+/* Disabled Button State */
+.form button:disabled {
+  background: rgba(139, 255, 247, 0.2); /* Faded version of form-content */
+  cursor: not-allowed;
+  box-shadow: none;
+}

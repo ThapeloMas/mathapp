@@ -10,7 +10,8 @@ import Grade3 from "./pages/Grade3";
 import Grade4 from "./pages/Grade4";
 import Loader from "./components/Loader";
 import LandingPage from "./components/LandingPage";
-import HeaderControls from "./components/HeaderControls"; // New component
+import TermsAndConditions from "./components/TermsAndConditions"; // Import the new component
+import HeaderControls from "./components/HeaderControls";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -70,31 +71,64 @@ function App() {
         toggleSound={toggleSound}
       />
 
-      <div className="content">
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route
-            path="/home"
-            element={<Home onRouteChange={handleRouteChange} user={user} />}
-          />
-          <Route
-            path="/grade1"
-            element={<Grade1 onRouteChange={handleRouteChange} user={user} />}
-          />
-          <Route
-            path="/grade2"
-            element={<Grade2 onRouteChange={handleRouteChange} user={user} />}
-          />
-          <Route
-            path="/grade3"
-            element={<Grade3 onRouteChange={handleRouteChange} user={user} />}
-          />
-          <Route
-            path="/grade4"
-            element={<Grade4 onRouteChange={handleRouteChange} user={user} />}
-          />
-        </Routes>
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="content landing-page-content">
+              <LandingPage />
+            </div>
+          }
+        />
+        <Route
+          path="/terms"
+          element={
+            <div className="content">
+              <TermsAndConditions />
+            </div>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <div className="content">
+              <Home onRouteChange={handleRouteChange} user={user} />
+            </div>
+          }
+        />
+        <Route
+          path="/grade1"
+          element={
+            <div className="content">
+              <Grade1 onRouteChange={handleRouteChange} user={user} />
+            </div>
+          }
+        />
+        <Route
+          path="/grade2"
+          element={
+            <div className="content">
+              <Grade2 onRouteChange={handleRouteChange} user={user} />
+            </div>
+          }
+        />
+        <Route
+          path="/grade3"
+          element={
+            <div className="content">
+              <Grade3 onRouteChange={handleRouteChange} user={user} />
+            </div>
+          }
+        />
+        <Route
+          path="/grade4"
+          element={
+            <div className="content">
+              <Grade4 onRouteChange={handleRouteChange} user={user} />
+            </div>
+          }
+        />
+      </Routes>
     </Router>
   );
 }

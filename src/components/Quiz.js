@@ -8,7 +8,8 @@ import grade1Questions from "../data/grade1Questions.json";
 import grade2Questions from "../data/grade2Questions.json";
 import grade3Questions from "../data/grade3Questions.json";
 import grade4Questions from "../data/grade4Questions.json";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 const Quiz = ({ grade, onRouteChange, user }) => {
   const [questions, setQuestions] = useState([]);
@@ -21,7 +22,7 @@ const Quiz = ({ grade, onRouteChange, user }) => {
   const [timeSpent, setTimeSpent] = useState(0);
   const [totalTimeSpent, setTotalTimeSpent] = useState([]);
   const [timerActive, setTimerActive] = useState(false);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     const questionSets = {
@@ -41,6 +42,15 @@ const Quiz = ({ grade, onRouteChange, user }) => {
     }
     return () => clearInterval(timer);
   }, [timerActive, showScore]);
+
+  // Initialize EmailJS with the public key (user ID)
+  useEffect(() => {
+    if (process.env.REACT_APP_EMAILJS_USER_ID) {
+      emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
+    } else {
+      console.error("EmailJS User ID is not defined in environment variables.");
+    }
+  }, []);
 
   const handleAnswer = async (isCorrect) => {
     setTimerActive(false);
@@ -73,7 +83,6 @@ const Quiz = ({ grade, onRouteChange, user }) => {
           setTimeout(() => setShowFireworks(false), 5000);
         }
 
-        // Store results in Firestore
         try {
           await addDoc(collection(db, "quizResults"), {
             grade,
@@ -93,7 +102,55 @@ const Quiz = ({ grade, onRouteChange, user }) => {
   };
 
   const handleQuit = () => {
-    navigate("/"); // Navigate to landing page
+    navigate("/");
+  };
+
+  const sendEmail = () => {
+    if (!user || !user.email) {
+      alert("No user logged in or email not available!");
+      return;
+    }
+
+  
+    // Check if EmailJS credentials are available
+    if (
+      !process.env.REACT_APP_EMAILJS_SERVICE_ID ||
+      !process.env.REACT_APP_EMAILJS_TEMPLATE_ID ||
+      !process.env.REACT_APP_EMAILJS_USER_ID
+    ) {
+      console.error(
+        "EmailJS credentials are missing in environment variables."
+      );
+      alert("Email service is not properly configured. Contact support.");
+      return;
+    }
+
+    const templateParams = {
+      to_email: user.email,
+      grade: grade,
+      score: score,
+      totalQuestions: questions.length,
+      correctAnswers: score,
+      wrongAnswers: questions.length - score,
+      timeSpent: totalTimeSpent.reduce((a, b) => a + b, 0),
+    };
+
+    emailjs
+      .send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        templateParams
+      )
+      .then(
+        (result) => {
+          console.log("Email sent successfully:", result.text);
+          alert("Quiz results sent to your email!");
+        },
+        (error) => {
+          console.error("Error sending email:", error);
+          alert("Failed to send email: " + (error.text || "Unknown error"));
+        }
+      );
   };
 
   const particlesInit = async (engine) => {
@@ -132,9 +189,14 @@ const Quiz = ({ grade, onRouteChange, user }) => {
             seconds
           </p>
           {user ? <p>Saved for {user.email}</p> : <p>Played as Guest</p>}
-          <button onClick={handleQuit} className="quit-button">
+          <button onClick={handleQuit} className="logout-button">
             Quit to Landing Page
           </button>
+          {user && (
+            <button onClick={sendEmail} className="send-results-button">
+              Send Results to Parents
+            </button>
+          )}
         </div>
       ) : (
         <>
