@@ -113,3 +113,39 @@ body {
   position: relative;
   z-index: 1;
 }
+
+.quiz-container {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.quiz-container.correct {
+  background-color: #d4edda; /* Light green for correct answer */
+}
+
+.quiz-container.incorrect {
+  background-color: #f8d7da; /* Light red for incorrect answer */
+}
+
+.feedback-message {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.feedback-message.correct-feedback {
+  color: #155724; /* Dark green for correct feedback */
+}
+
+.feedback-message.incorrect-feedback {
+  color: #721c24; /* Dark red for incorrect feedback */
+}
+
+.timer {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
