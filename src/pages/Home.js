@@ -1,14 +1,12 @@
-import GradeSelector from "../components/GradeSelector";
 import { useEffect, useRef } from "react";
+import GradeSelector from "../components/GradeSelector";
 
-const Home = ({ onRouteChange, isSoundOn }) => {
-  // Use useRef to persist audio across re-renders
+const Home = ({ onRouteChange, isSoundOn, user }) => {
   const backgroundMusicRef = useRef(new Audio("/assets/welcometune.mp3"));
 
   useEffect(() => {
     const backgroundMusic = backgroundMusicRef.current;
     backgroundMusic.loop = true;
-
     if (isSoundOn) {
       backgroundMusic
         .play()
@@ -16,17 +14,17 @@ const Home = ({ onRouteChange, isSoundOn }) => {
     } else {
       backgroundMusic.pause();
     }
-
     return () => {
       backgroundMusic.pause();
       backgroundMusic.currentTime = 0;
     };
-  }, [isSoundOn]); // Re-run when isSoundOn changes
+  }, [isSoundOn]);
 
   return (
     <div className="home">
       <h1>Welcome to the Arithmetic Quiz App!</h1>
-      <GradeSelector />
+      {user ? <p>Welcome, {user.email}!</p> : <p>Playing as Guest</p>}
+      <GradeSelector user={user} />
     </div>
   );
 };
