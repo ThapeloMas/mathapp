@@ -8,6 +8,7 @@ import grade1Questions from "../data/grade1Questions.json";
 import grade2Questions from "../data/grade2Questions.json";
 import grade3Questions from "../data/grade3Questions.json";
 import grade4Questions from "../data/grade4Questions.json";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Quiz = ({ grade, onRouteChange, user }) => {
   const [questions, setQuestions] = useState([]);
@@ -20,6 +21,7 @@ const Quiz = ({ grade, onRouteChange, user }) => {
   const [timeSpent, setTimeSpent] = useState(0);
   const [totalTimeSpent, setTotalTimeSpent] = useState([]);
   const [timerActive, setTimerActive] = useState(false);
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const questionSets = {
@@ -79,7 +81,7 @@ const Quiz = ({ grade, onRouteChange, user }) => {
             correctAnswers: score + (isCorrect ? 1 : 0),
             wrongAnswers: questions.length - (score + (isCorrect ? 1 : 0)),
             timeSpentPerQuestion: [...totalTimeSpent, timeForThisQuestion],
-            userId: user ? user.uid : "guest", // Store user ID or "guest"
+            userId: user ? user.uid : "guest",
             timestamp: new Date().toISOString(),
           });
           console.log("Results saved to Firestore");
@@ -88,6 +90,10 @@ const Quiz = ({ grade, onRouteChange, user }) => {
         }
       }
     }, 2000);
+  };
+
+  const handleQuit = () => {
+    navigate("/"); // Navigate to landing page
   };
 
   const particlesInit = async (engine) => {
@@ -126,6 +132,9 @@ const Quiz = ({ grade, onRouteChange, user }) => {
             seconds
           </p>
           {user ? <p>Saved for {user.email}</p> : <p>Played as Guest</p>}
+          <button onClick={handleQuit} className="quit-button">
+            Quit to Landing Page
+          </button>
         </div>
       ) : (
         <>
@@ -160,6 +169,9 @@ const Quiz = ({ grade, onRouteChange, user }) => {
               {feedbackMessage}
             </div>
           )}
+          <button onClick={handleQuit} className="logout-button">
+            Quit
+          </button>
         </>
       )}
       {showFireworks && (

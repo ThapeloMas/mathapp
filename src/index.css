@@ -149,3 +149,22 @@ body {
   font-size: 16px;
   color: #333;
 }
+
+/* index.css */
+.logout-button {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  display: block; /* Makes it appear below the switch */
+  margin: 10px auto 0; /* Centers it and adds space from the switch */
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #e65a50; /* Slightly darker shade on hover */
+}
+

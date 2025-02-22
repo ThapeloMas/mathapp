@@ -1,20 +1,21 @@
+// App.js
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import { auth } from "./firebase/firebase"; // Import Firebase Auth
-import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase/firebase";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import Home from "./pages/Home";
 import Grade1 from "./pages/Grade1";
 import Grade2 from "./pages/Grade2";
 import Grade3 from "./pages/Grade3";
 import Grade4 from "./pages/Grade4";
 import Loader from "./components/Loader";
-import Switch from "./components/Switch";
-import LandingPage from "./components/LandingPage"; // Import the new LandingPage
+import LandingPage from "./components/LandingPage";
+import HeaderControls from "./components/HeaderControls"; // New component
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isSoundOn, setIsSoundOn] = useState(true);
-  const [user, setUser] = useState(null); // Track logged-in user
+  const [user, setUser] = useState(null);
   const backgroundMusicRef = useRef(new Audio("/assets/welcometune.mp3"));
 
   useEffect(() => {
@@ -22,7 +23,6 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Listen for auth state changes
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -64,9 +64,11 @@ function App() {
 
       <Loader isLoading={isLoading} />
 
-      <div className="sound-control">
-        <Switch onChange={toggleSound} checked={isSoundOn} />
-      </div>
+      <HeaderControls
+        user={user}
+        isSoundOn={isSoundOn}
+        toggleSound={toggleSound}
+      />
 
       <div className="content">
         <Routes>
