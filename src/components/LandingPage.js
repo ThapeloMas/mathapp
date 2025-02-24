@@ -1,4 +1,3 @@
-// components/LandingPage.jsx
 import React, { useState } from "react";
 import "./LandingPage.css";
 import { auth } from "../firebase/firebase";
@@ -7,21 +6,25 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LandingPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
   const [error, setError] = useState("");
-  const [termsAccepted, setTermsAccepted] = useState(false); // Checkbox state
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/home");
+      toast.success("Successfully logged in!");
+      setTimeout(() => navigate("/home"), 1000); // Delay navigation to show toast
     } catch (err) {
+      toast.error(err.message || "Login failed. Please try again.");
       setError(err.message);
     }
   };
@@ -29,19 +32,23 @@ const LandingPage = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     if (!termsAccepted) {
+      toast.error("Please accept the Terms and Conditions to sign up.");
       setError("Please accept the Terms and Conditions to sign up.");
       return;
     }
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/home");
+      toast.success("Account created successfully!");
+      setTimeout(() => navigate("/home"), 1000); // Delay navigation to show toast
     } catch (err) {
+      toast.error(err.message || "Sign up failed. Please try again.");
       setError(err.message);
     }
   };
 
   const handleGuestPlay = () => {
-    navigate("/home");
+    toast.info("Continuing as guest");
+    setTimeout(() => navigate("/home"), 1000); // Delay navigation to show toast
   };
 
   return (
@@ -129,6 +136,18 @@ const LandingPage = () => {
         </div>
         <div id="emiter">{/* Your existing emitter SVG code */}</div>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 };
