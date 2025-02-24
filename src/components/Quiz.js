@@ -167,7 +167,6 @@ const Quiz = ({ grade, onRouteChange, user }) => {
   };
 
   if (questions.length === 0) {
-    toast.error("No questions available for this grade");
     return <div>No questions available for this grade</div>;
   }
 
