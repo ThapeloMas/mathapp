@@ -1,10 +1,10 @@
-/* Center the form in the middle of the page */
+
 .StyledWrapper #Container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Center vertically */
-  min-height: 100vh; /* Full viewport height */
+  justify-content: center;
+  min-height: 100vh; 
 }
 
 .form {

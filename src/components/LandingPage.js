@@ -22,7 +22,7 @@ const LandingPage = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       toast.success("Successfully logged in!");
-      setTimeout(() => navigate("/home"), 1000); // Delay navigation to show toast
+      setTimeout(() => navigate("/home"), 1000); 
     } catch (err) {
       toast.error(err.message || "Login failed. Please try again.");
       setError(err.message);
@@ -39,7 +39,7 @@ const LandingPage = () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       toast.success("Account created successfully!");
-      setTimeout(() => navigate("/home"), 1000); // Delay navigation to show toast
+      setTimeout(() => navigate("/home"), 1000); 
     } catch (err) {
       toast.error(err.message || "Sign up failed. Please try again.");
       setError(err.message);
@@ -48,7 +48,7 @@ const LandingPage = () => {
 
   const handleGuestPlay = () => {
     toast.info("Continuing as guest");
-    setTimeout(() => navigate("/home"), 1000); // Delay navigation to show toast
+    setTimeout(() => navigate("/home"), 1000); 
   };
 
   return (

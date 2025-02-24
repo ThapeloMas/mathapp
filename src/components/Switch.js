@@ -9,7 +9,7 @@ const Switch = ({ onChange, checked }) => {
           type="checkbox"
           checked={checked}
           onChange={() => {
-            onChange(); // This ensures sound toggle is triggered by user action
+            onChange(); 
           }}
         />
         <div className="slider">
@@ -22,7 +22,7 @@ const Switch = ({ onChange, checked }) => {
 };
 
 const StyledWrapper = styled.div`
-  /* The switch - the box around the slider */
+
   .switch {
     font-size: 17px;
     position: relative;
@@ -31,7 +31,7 @@ const StyledWrapper = styled.div`
     height: 2em;
   }
 
-  /* The slider */
+
   .slider {
     position: absolute;
     cursor: pointer;

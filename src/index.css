@@ -77,21 +77,21 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Ensure the video stays in the background */
-  object-fit: cover; /* Make the video cover the entire background */
+  z-index: -1; 
+  object-fit: cover; 
 }
 
 .content:not(.landing-page-content) {
   position: relative;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+  background: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 10px;
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* App.css or wherever your styles are */
+
 .sound-control {
   position: fixed;
   top: 20px;
@@ -124,11 +124,11 @@ body {
 }
 
 .quiz-container.correct {
-  background-color: #d4edda; /* Light green for correct answer */
+  background-color: #d4edda; 
 }
 
 .quiz-container.incorrect {
-  background-color: #f8d7da; /* Light red for incorrect answer */
+  background-color: #f8d7da; 
 }
 
 .feedback-message {
@@ -137,11 +137,11 @@ body {
 }
 
 .feedback-message.correct-feedback {
-  color: #155724; /* Dark green for correct feedback */
+  color: #155724; 
 }
 
 .feedback-message.incorrect-feedback {
-  color: #721c24; /* Dark red for incorrect feedback */
+  color: #721c24; 
 }
 
 .timer {
@@ -150,7 +150,7 @@ body {
   color: #333;
 }
 
-/* index.css */
+
 .logout-button {
   background-color: #ff6f61;
   color: white;
@@ -159,13 +159,13 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
-  display: block; /* Makes it appear below the switch */
-  margin: 10px auto 0; /* Centers it and adds space from the switch */
+  display: block; 
+  margin: 10px auto 0; 
   transition: background-color 0.3s ease;
 }
 
 .logout-button:hover {
-  background-color: #e65a50; /* Slightly darker shade on hover */
+  background-color: #e65a50; 
 }
 
 .send-results-button {

@@ -1,4 +1,4 @@
-// New component: HeaderControls.js
+
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase";
@@ -10,7 +10,7 @@ const HeaderControls = ({ user, isSoundOn, toggleSound }) => {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      navigate("/"); // Redirect to landing page after logout
+      navigate("/");
     } catch (error) {
       console.error("Logout failed:", error);
     }

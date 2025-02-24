@@ -1,4 +1,3 @@
-// App.js
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { auth } from "./firebase/firebase";
@@ -10,7 +9,7 @@ import Grade3 from "./pages/Grade3";
 import Grade4 from "./pages/Grade4";
 import Loader from "./components/Loader";
 import LandingPage from "./components/LandingPage";
-import TermsAndConditions from "./components/TermsAndConditions"; // Import the new component
+import TermsAndConditions from "./components/TermsAndConditions"; 
 import HeaderControls from "./components/HeaderControls";
 
 function App() {
